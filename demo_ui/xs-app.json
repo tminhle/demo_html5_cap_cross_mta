@@ -5,11 +5,11 @@
 		"logoutEndpoint": "/do/logout"
 	},
 	"routes": [{
-		"source": "^/odata/v4/(.*)$",
+		"source": "^/servicegoals/(.*)$",
 		"target": "$1",
 		"authenticationType": "xsuaa",
-		"csrfProtection": false,
-		"destination": "servicegoals"
+		"destination": "servicegoals",
+		"csrfProtection": false
 	}, {
 		"source": "^(.*)$",
 		"target": "$1",

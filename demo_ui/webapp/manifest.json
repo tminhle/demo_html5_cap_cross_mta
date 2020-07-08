@@ -12,7 +12,7 @@
 		"resources": "resources.json",
 		"dataSources": {
 			"mainService": {
-				"uri": "/odata/v4/mpgoals/",
+				"uri": "/servicegoals/odata/v4/mpgoals/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "4.0",

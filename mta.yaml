@@ -14,6 +14,12 @@ modules:
       - name: demo_html5_repo_runtime
       - name: dest_demo
       - name: uaa_demo
+      - name: cap-config
+        group: destinations
+        properties:
+          name: servicegoals
+          url: '~{url}'
+          forwardAuthToken: true
   - name: demo_ui_deployer
     type: com.sap.html5.application-content
     path: demo_ui_deployer
@@ -35,13 +41,6 @@ modules:
         - npm run build
       supported-platforms: []
       build-result: dist
-    requires:
-      - name: cap-config
-        group: destinations
-        properties:
-          name: servicegoals
-          url: '~{url}'
-          forwardAuthToken: true
 resources:
   - name: demo_html5_repo_runtime
     parameters:
