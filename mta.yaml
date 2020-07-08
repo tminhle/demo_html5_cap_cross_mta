@@ -36,8 +36,6 @@ modules:
       supported-platforms: []
       build-result: dist
     requires:
-      - name: uaa_demo
-      - name: dest_demo
       - name: cap-config
         group: destinations
         properties:
