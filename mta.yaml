@@ -12,14 +12,14 @@ modules:
       memory: 256M
     requires:
       - name: demo_html5_repo_runtime
-      - name: dest_demo
-      - name: uaa_demo
       - name: cap-config
         group: destinations
         properties:
           name: servicegoals
           url: '~{url}'
           forwardAuthToken: true
+      - name: dest_demo
+      - name: uaa_demo
   - name: demo_ui_deployer
     type: com.sap.html5.application-content
     path: demo_ui_deployer
@@ -31,9 +31,23 @@ modules:
           artifacts:
             - './*'
           target-path: resources/demo_ui
+        - name: demo_ui_destination
+          artifacts:
+            - './*'
+          target-path: resources/demo_ui_destination
   - name: demo_ui
     type: html5
     path: demo_ui
+    build-parameters:
+      builder: custom
+      commands:
+        - npm install
+        - npm run build
+      supported-platforms: []
+      build-result: dist
+  - name: demo_ui_destination
+    type: html5
+    path: demo_ui_destination
     build-parameters:
       builder: custom
       commands:
